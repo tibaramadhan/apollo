@@ -1,0 +1,26 @@
+name: Assignment 5 
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout  
+          uses: actions/checkout@v2
+          with:
+            repository: tibaramadhan/apollo
+            
+            submodules: 'true'
+            #path: './depencies/vtk'
+            ref: 53e6d7c202cdcc3c22b4fca9c29fe643340dcc82
+        - name: Set up JDK 8
+          uses: actions/setup-java@v3
+          with:
+            java-version: '8'
+            distribution: 'adopt'
+            cache: maven
+        - run: mvn test-compile -pl apollo-core -am
+        - run: mvn -pl apollo-core test -Dtest=com.ctrip.framework.apollo.core.utils.DeferredLoggerTest#testDeferredLog
+        - run: mvn -pl apollo-core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.ctrip.framework.apollo.core.utils.DeferredLoggerTest#testDeferredLog
+
+

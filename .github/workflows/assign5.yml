@@ -12,7 +12,7 @@ jobs:
             
             submodules: 'true'
             #path: './depencies/vtk'
-            ref: 732001fdce9b01a4c370bb666f30348d7da9a3cf
+            ref: 25fa47fc524f284276b17ac48054e5fc79ab841a
         - name: Set up JDK 8
           uses: actions/setup-java@v3
           with:

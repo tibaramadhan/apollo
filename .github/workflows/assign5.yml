@@ -9,10 +9,6 @@ jobs:
           uses: actions/checkout@v2
           with:
             repository: tibaramadhan/wildfly
-            
-            submodules: 'true'
-            #path: './depencies/vtk'
-            ref: 25fa47fc524f284276b17ac48054e5fc79ab841a
         - name: Set up JDK 8
           uses: actions/setup-java@v3
           with:
